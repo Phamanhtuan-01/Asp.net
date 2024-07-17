@@ -1,0 +1,33 @@
+﻿@model IEnumerable<patcntt2CF.Models.PatCategory>
+
+@{
+    ViewBag.Title = "PatIndex";
+}
+
+<h2>PatIndex</h2>
+
+<p>
+    @Html.ActionLink("Pat: Create New", "PatCreate")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PatCategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatCategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PatCategoryId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PatCategoryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PatCategoryId })
+        </td>
+    </tr>
+}
+
+</table>
